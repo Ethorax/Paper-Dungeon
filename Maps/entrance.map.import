@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://b5lnlxxuyunwp"
+path="res://.godot/imported/entrance.map-ed4c16c3d44bdfbb308a19253ed96d62.tres"
+
+[deps]
+
+source_file="res://Maps/entrance.map"
+dest_files=["res://.godot/imported/entrance.map-ed4c16c3d44bdfbb308a19253ed96d62.tres"]
+
+[params]
+

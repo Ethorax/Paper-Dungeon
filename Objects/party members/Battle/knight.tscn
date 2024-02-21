@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://c66jhbrjt4nyc"]
+
+[ext_resource type="PackedScene" uid="uid://cp7r8mdktl1w2" path="res://Objects/stats.tscn" id="1_hdk1j"]
+[ext_resource type="Texture2D" uid="uid://fwikx56pfroi" path="res://Sprites/Knight.png" id="1_mv5tp"]
+[ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="2_njtd5"]
+[ext_resource type="PackedScene" uid="uid://cufrraw834gc1" path="res://Objects/Move_selector.tscn" id="4_lsqob"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ge4g"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.0117647)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hjqlc"]
+material = SubResource("StandardMaterial3D_8ge4g")
+
+[node name="Knight" type="Node3D" groups=["Hero"]]
+
+[node name="Stats" parent="." instance=ExtResource("1_hdk1j")]
+max_health = 10
+health = 10
+mana = 10
+strength = 5
+speed = 5
+constitution = 5
+luck = 5
+attack = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0.0853191, 0, 0.162734)
+billboard = 1
+shaded = true
+texture_filter = 0
+texture = ExtResource("1_mv5tp")
+hframes = 3
+vframes = 2
+
+[node name="Selector" parent="." instance=ExtResource("4_lsqob")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 0.135055, 5.2704, 0)
+visible = false
+
+[node name="Light" type="SpotLight3D" parent="."]
+transform = Transform3D(0.0122168, 0.999908, -0.00582878, 7.12426e-05, 0.00582835, 0.999983, 0.999925, -0.012217, -3.2214e-08, -0.32312, 15.1418, -0.0285871)
+visible = false
+light_energy = 400.0
+light_indirect_energy = 1.333
+light_volumetric_fog_energy = 0.0
+spot_range = 18.9601
+spot_angle = 8.35762
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(4.75386, 7.40329e-09, -3.72529e-09, 3.72529e-09, -1.72756e-06, -4.36996, -7.35312e-10, 41.1536, -1.86124e-07, 0.00878567, 0.719108, -10.6902)
+mesh = SubResource("CylinderMesh_hjqlc")
+
+[node name="Bar" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.999, 0)
+script = ExtResource("2_njtd5")
+max_value = 100.0
+value = 100.0
+outline_size = 0.05
+size = Vector3(4, 0.45, 0.05)
+keep_empty_bar = true

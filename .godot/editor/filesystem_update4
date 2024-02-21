@@ -1,0 +1,8 @@
+res://Objects/UI/menu.tscn
+res://Shaders/postprocessing.gdshader
+res://Shaders/fire.gdshader
+res://Shaders/sky.gdshader
+res://Shaders/waterplane.gdshader
+res://Objects/inventory/Slot.tscn
+res://Objects/inventory/inventory_ui.tscn
+res://Objects/party members/Map/2dcharacter.tscn

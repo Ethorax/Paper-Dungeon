@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://dj43n7q7tfdpd"
+path="res://.godot/imported/battlestage.map-058868fe2da0609252d5c1d83643b23a.tres"
+
+[deps]
+
+source_file="res://Maps/battlestage.map"
+dest_files=["res://.godot/imported/battlestage.map-058868fe2da0609252d5c1d83643b23a.tres"]
+
+[params]
+

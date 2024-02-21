@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://nyjdjx4w1la1"]
+
+[ext_resource type="Texture2D" uid="uid://cgrq7mdeh12di" path="res://Sprites/Enemies/Ghost.png" id="1_1fej4"]
+[ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="2_px3mh"]
+[ext_resource type="PackedScene" uid="uid://cp7r8mdktl1w2" path="res://Objects/stats.tscn" id="3_ij4tp"]
+[ext_resource type="Texture2D" uid="uid://dilmye0cokrcj" path="res://Sprites/MedievalCursor.png" id="4_u1edu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vk6bo"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.0117647)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_c3iri"]
+material = SubResource("StandardMaterial3D_vk6bo")
+
+[node name="Ghost" type="Node3D" groups=["Enemy"]]
+
+[node name="Sprite3D" type="Sprite3D" parent="." groups=["Enemy"]]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+billboard = 2
+shaded = true
+texture_filter = 0
+texture = ExtResource("1_1fej4")
+
+[node name="Stats" parent="." instance=ExtResource("3_ij4tp")]
+max_health = 10
+health = 10
+mana = 10
+strength = 5
+speed = 6
+constitution = 5
+luck = 5
+attack = 1
+
+[node name="Light" type="SpotLight3D" parent="."]
+transform = Transform3D(0.0122168, 0.999908, -0.00584062, 7.13873e-05, 0.00584018, 0.999983, 0.999925, -0.012217, -3.24249e-08, -0.585081, 18.9646, -0.0285871)
+visible = false
+light_energy = 400.0
+light_indirect_energy = 1.333
+light_volumetric_fog_energy = 0.0
+spot_range = 23.6917
+spot_angle = 6.93745
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Light" groups=["Enemy"]]
+transform = Transform3D(4.363, 3.3782e-09, -2.98128e-17, 0, -8.81615e-07, -4.072, -7.30779e-10, 20.169, -1.77993e-07, 0.00870868, 0.712809, -11.7827)
+mesh = SubResource("CylinderMesh_c3iri")
+
+[node name="Cursor" type="Sprite3D" parent="Light/MeshInstance3D"]
+transform = Transform3D(0.00840028, 4.90858e-05, 0.687549, -0.000868758, 0.148741, -4.71834e-09, -0.736671, -0.00430272, 0.00900075, 0.313184, -0.319225, 0.061618)
+billboard = 1
+texture = ExtResource("4_u1edu")
+
+[node name="Bar" type="Node3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 2.99942, 0)
+script = ExtResource("2_px3mh")
+max_value = 100.0
+value = 100.0
+outline_size = 0.05
+keep_empty_bar = true
+cast_shadows = 1

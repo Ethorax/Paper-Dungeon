@@ -1,0 +1,14 @@
+Label
+VBoxContainer
+TextureProgressBar
+ProgressBar
+CanvasLayer
+PanelContainer
+GridContainer
+TextureRect
+MarginContainer
+CollisionShape3D
+Area3D
+AnimationPlayer
+Sprite3D
+HBoxContainer

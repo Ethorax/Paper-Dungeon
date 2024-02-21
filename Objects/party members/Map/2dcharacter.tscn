@@ -1,0 +1,230 @@
+[gd_scene load_steps=20 format=3 uid="uid://d3j7sfuy6qgss"]
+
+[ext_resource type="Script" path="res://Scripts/2dcharacter.gd" id="1_y3r2s"]
+[ext_resource type="PackedScene" uid="uid://c66jhbrjt4nyc" path="res://Objects/party members/Battle/knight.tscn" id="2_ar1t6"]
+[ext_resource type="Texture2D" uid="uid://fwikx56pfroi" path="res://Sprites/Knight.png" id="2_t3k63"]
+[ext_resource type="Script" path="res://Scripts/torch.gd" id="2_un1g8"]
+[ext_resource type="PackedScene" uid="uid://dljuybmwmv5tp" path="res://Objects/party members/Battle/wizard.tscn" id="3_vhkls"]
+[ext_resource type="Shader" path="res://Shaders/postprocessing.gdshader" id="4_fju17"]
+[ext_resource type="PackedScene" uid="uid://dkigq54a6288r" path="res://Objects/fire.tscn" id="4_jsjw5"]
+[ext_resource type="PackedScene" uid="uid://cd58rs175s5yn" path="res://Objects/UI/menu.tscn" id="8_2x7u0"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rpi81"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_evlpo"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_htf0y"]
+frequency = 0.17
+metadata/_preview_in_3d_space_ = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2j4eo"]
+noise = SubResource("FastNoiseLite_htf0y")
+
+[sub_resource type="Animation" id="Animation_ru6kn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.551338, 4.76837e-07, 0.103331)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hitbox/CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6qa7b"]
+resource_name = "swing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_4twjj"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.551338, 4.76837e-07, 0.103331), Vector3(-0.551, -0.2, 0.103), Vector3(-0.551338, 4.76837e-07, 0.103331)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oand8"]
+_data = {
+"RESET": SubResource("Animation_ru6kn"),
+"swing": SubResource("Animation_6qa7b"),
+"walk": SubResource("Animation_4twjj")
+}
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1f7wr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5554"]
+shader = ExtResource("4_fju17")
+shader_parameter/saw_b_shift = -0.267
+shader_parameter/saw_a_interval = 1.0
+shader_parameter/saw_b_interval = 2.0
+shader_parameter/saw_a_scale = 1.0
+shader_parameter/saw_b_scale = 0.821
+shader_parameter/uv_scale = Vector2(3, 8)
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/right = -1.34
+shader_parameter/left = -0.755
+shader_parameter/tex = SubResource("PlaceholderTexture2D_1f7wr")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hm16g"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["Player"]]
+transform = Transform3D(0.955378, 0.295388, -9.90944e-05, -0.295388, 0.955378, -0.000125885, 5.74885e-05, 0.000149539, 1, 0, 2.07016, 0)
+script = ExtResource("1_y3r2s")
+party = [ExtResource("2_ar1t6"), ExtResource("3_vhkls"), null, null]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 3
+mesh = SubResource("CapsuleMesh_rpi81")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 8.59664e-09, 0, 8.59676e-09, 1, 0, -4.36557e-11, 0, 1, 0.000704825, -0.0130367, -0.0362888)
+shape = SubResource("CapsuleShape3D_evlpo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.0134583, 0.298624, -0.954276, 0.00421114, 0.954371, 0.298595, 0.999901, 4.65708e-10, -0.0141018, -10.107, 6.23924, -0.00039804)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.0732381, -0.997313, 0, 0.997314, 0.0732381, 1, 3.20134e-09, -4.35939e-08, -0.551338, 4.76837e-07, 0.103331)
+offset = Vector2(16, 0)
+pixel_size = 0.03
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_t3k63")
+hframes = 3
+vframes = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 4.12722e-10, -9.31323e-10, 1, 3.80424e-10, 1.60227e-12, 3.8198e-10, 1, -0.00207571, -0.273054, -0.019738)
+
+[node name="Torch" type="OmniLight3D" parent="."]
+transform = Transform3D(0.999999, 0, -3.10862e-15, 0, 0.999999, -9.31322e-10, 0, 9.31323e-10, 1, -0.881468, 0.264344, 0.813253)
+light_color = Color(1, 0.607843, 0, 1)
+light_energy = 6.228
+light_size = 0.8
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+script = ExtResource("2_un1g8")
+noise = SubResource("NoiseTexture2D_2j4eo")
+
+[node name="Fire" parent="Torch" groups=["Player"] instance=ExtResource("4_jsjw5")]
+transform = Transform3D(0.0971167, 0.0238398, -2.22026e-11, -0.0238398, 0.0971167, 2.68523e-12, 2.22025e-11, 2.68526e-12, 0.1, 0.152412, 0.0465508, 0)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oand8")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_y5554")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 4.0
+offset_right = -2.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" parent="CanvasLayer" instance=ExtResource("8_2x7u0")]
+offset_left = 119.0
+offset_top = 74.0
+offset_right = 119.0
+offset_bottom = 74.0
+scale = Vector2(0.8, 0.8)
+
+[node name="TorchRight" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.881468, 0.264344, 0.813253)
+
+[node name="Torchleft" type="Marker3D" parent="."]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.881468, 0.264344, -0.782519)
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.248425, 0.813373, 1.21563)
+
+[node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 8.59664e-09, 0, 8.59676e-09, 1, 0, -4.36557e-11, 0, 1, 7.59363e-05, 0.00019753, 1.3209)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 8.59664e-09, 0, 8.59676e-09, 1, 0, -2.91038e-11, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_hm16g")
+disabled = true
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

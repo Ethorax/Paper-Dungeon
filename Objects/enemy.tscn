@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpyaybnrmtwo5"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_np1jt"]
+[ext_resource type="Texture2D" uid="uid://2mghtd40yb2k" path="res://Sprites/Enemies/slime.png" id="2_qojud"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0ugj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oeab2"]
+radius = 0.599606
+height = 2.15244
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_np1jt")
+texture = ExtResource("2_qojud")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_p0ugj")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2.305, 0, 0, 0, 2.305, 0, 0, 0, 2.305, 0, 0.0599338, 0.0185025)
+billboard = 1
+shaded = true
+texture = ExtResource("2_qojud")
+hframes = 2
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_oeab2")

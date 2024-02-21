@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://bthcnas743puf"]
+
+[ext_resource type="Texture2D" uid="uid://2mghtd40yb2k" path="res://Sprites/Enemies/slime.png" id="1_u0hoj"]
+[ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="2_cvfc5"]
+[ext_resource type="PackedScene" uid="uid://cp7r8mdktl1w2" path="res://Objects/stats.tscn" id="3_3lr2r"]
+[ext_resource type="Texture2D" uid="uid://dilmye0cokrcj" path="res://Sprites/MedievalCursor.png" id="4_tjoiy"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h24mb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ml042"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.0117647)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7qgb5"]
+material = SubResource("StandardMaterial3D_ml042")
+
+[node name="Slime" type="Node3D" groups=["Enemy"]]
+
+[node name="Sprite3D" type="Sprite3D" parent="." groups=["Enemy"]]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+billboard = 2
+shaded = true
+texture_filter = 0
+texture = ExtResource("1_u0hoj")
+hframes = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sprite3D"]
+transform = Transform3D(0.499, 0, -4.86945e-08, 0, -0.002, 0, 4.3624e-08, 0, 0.557, 0.188866, -0.254413, 0.17126)
+visible = false
+cast_shadow = 3
+mesh = SubResource("CylinderMesh_h24mb")
+
+[node name="Stats" parent="." instance=ExtResource("3_3lr2r")]
+max_health = 5
+health = 5
+mana = 10
+strength = 5
+speed = 2
+constitution = 5
+luck = 5
+attack = 1
+
+[node name="Light" type="SpotLight3D" parent="." groups=["Enemy"]]
+transform = Transform3D(0.0122168, 0.999908, -0.00584062, 7.13873e-05, 0.00584018, 0.999983, 0.999925, -0.012217, -3.26577e-08, -0.585081, 18.9646, -0.0285871)
+visible = false
+light_energy = 400.0
+light_indirect_energy = 1.333
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+spot_range = 24.1697
+spot_angle = 8.59186
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Light" groups=["Enemy"]]
+transform = Transform3D(3.73848, 9.45022e-09, 3.72529e-09, 0, -1.97838e-06, -3.45206, -6.77943e-10, 47.4245, -1.48517e-07, 0.00860548, 0.704367, -13.2282)
+mesh = SubResource("CylinderMesh_7qgb5")
+
+[node name="Cursor" type="Sprite3D" parent="Light/MeshInstance3D"]
+transform = Transform3D(0.00965073, 8.40509e-07, 0.577927, -0.00102287, 0.0603668, -8.22672e-08, -0.846257, -7.29571e-05, 0.0065907, 0.362795, -0.111133, 0.316119)
+billboard = 1
+texture = ExtResource("4_tjoiy")
+
+[node name="Bar" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.99962, 0)
+script = ExtResource("2_cvfc5")
+max_value = 100.0
+value = 100.0
+outline_size = 0.05
+keep_empty_bar = true
+cast_shadows = 0
