@@ -1,8 +1,8 @@
-res://inventory
-res://items/Items
+res://Shaders
+res://Scripts
+res://Scripts/UI
 res://Objects
 res://Sprites
-res://Scripts
 res://Objects/party members/Battle
 res://
 C:/Users/ezeld/Downloads/TrenchBroom-Win64-v2023.1-Release

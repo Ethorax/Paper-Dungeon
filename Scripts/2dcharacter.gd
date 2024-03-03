@@ -15,6 +15,9 @@ var just_entered : bool = true
 @onready var torch = $Torch
 @onready var anim = $AnimationPlayer
 
+@onready var inventory = $CanvasLayer/Menu/InventoryUi
+
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -106,3 +109,7 @@ func start_battle():
 		var screen = $CanvasLayer/ColorRect as ColorRect
 		screen.material.set_shader_parameter("Right", Global.transition)
 	get_tree().change_scene_to_file("res://Objects/battle_scene.tscn")
+
+
+func add_item(item : ItemData):
+	inventory.add_item(item)

@@ -11,4 +11,4 @@ quantity = 15
 
 [resource]
 script = ExtResource("1_napji")
-slot_datas = Array[ExtResource("3_tru30")]([SubResource("Resource_5bpdo"), null, null, null, null, null, null, null, null, null])
+slot_datas = Array[ExtResource("3_tru30")]([SubResource("Resource_5bpdo"), null, null, null, null, null, null, null])

@@ -1,0 +1,122 @@
+[gd_scene load_steps=4 format=3 uid="uid://j4n4ph0fmqmt"]
+
+[ext_resource type="PackedScene" uid="uid://bh3htw4c1mnv4" path="res://Objects/inventory/Slot.tscn" id="1_epg1x"]
+[ext_resource type="Script" path="res://Objects/UI/inventory_ui.gd" id="1_l6vya"]
+[ext_resource type="PackedScene" uid="uid://bq1bq6je212k0" path="res://Objects/UI/inventory_info_ui.tscn" id="2_iktbu"]
+
+[node name="InventoryUi" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6vya")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(818.15, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="ItemGrid" type="GridContainer" parent="HBoxContainer/ScrollContainer/PanelContainer"]
+layout_mode = 2
+columns = 12
+
+[node name="Slot" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot2" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot3" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot4" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot5" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot6" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot7" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot8" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot9" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot10" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot11" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot12" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot13" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot14" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot15" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot16" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot17" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot18" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot19" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot20" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot21" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot22" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot23" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot24" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot25" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot26" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot27" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot28" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot29" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="Slot30" parent="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid" instance=ExtResource("1_epg1x")]
+layout_mode = 2
+
+[node name="InventoryInfoUi" parent="HBoxContainer" instance=ExtResource("2_iktbu")]
+layout_mode = 2
+
+[connection signal="slot_clicked" from="HBoxContainer/ScrollContainer/PanelContainer/ItemGrid/Slot" to="." method="_on_slot_slot_clicked"]

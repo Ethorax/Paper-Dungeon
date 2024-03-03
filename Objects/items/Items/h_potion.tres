@@ -6,6 +6,8 @@
 [resource]
 script = ExtResource("1_la2lw")
 name = "Health Potion"
-description = ""
+description = "A health potion!
+
+You know what to do!"
 stackable = true
 texture = ExtResource("2_gg8iq")

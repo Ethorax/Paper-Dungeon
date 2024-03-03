@@ -1,6 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cd58rs175s5yn"]
+[gd_scene load_steps=14 format=3 uid="uid://cd58rs175s5yn"]
 
 [ext_resource type="Texture2D" uid="uid://g6c1kamvlmxw" path="res://Sprites/Profiles.png" id="1_0mfu2"]
+[ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="1_m1vyy"]
+[ext_resource type="PackedScene" uid="uid://dgvi1nsn5bo0e" path="res://Objects/UI/menu2.tscn" id="2_836h6"]
+[ext_resource type="PackedScene" uid="uid://j4n4ph0fmqmt" path="res://Objects/UI/inventory_ui.tscn" id="3_tdbmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tb48n"]
 atlas = ExtResource("1_0mfu2")
@@ -42,14 +45,6 @@ gradient = SubResource("Gradient_psvmq")
 width = 155
 height = 30
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vokoc"]
-atlas = ExtResource("1_0mfu2")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3s1yw"]
-atlas = ExtResource("1_0mfu2")
-region = Rect2(128, 0, 64, 64)
-
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -57,31 +52,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m1vyy")
 
 [node name="Panel" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_right = 1154.0
 offset_bottom = 646.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="Characters" type="VBoxContainer" parent="Panel/HBoxContainer"]
 clip_contents = true
 layout_mode = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/Characters"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="Portrait" type="TextureRect" parent="Panel/HBoxContainer/Characters/HBoxContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_tb48n")
 expand_mode = 2
 flip_h = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="HPBar" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 max_value = 10.0
 value = 10.0
@@ -89,7 +88,7 @@ texture_under = SubResource("GradientTexture2D_ahcm2")
 texture_progress = SubResource("GradientTexture2D_sv3ew")
 texture_progress_offset = Vector2(2.36, 4.555)
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/TextureProgressBar"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer/HPBar"]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 8.0
@@ -97,7 +96,7 @@ offset_right = 110.0
 offset_bottom = 31.0
 text = "10"
 
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MPBar" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 max_value = 10.0
 value = 10.0
@@ -105,14 +104,15 @@ texture_under = SubResource("GradientTexture2D_ahcm2")
 texture_progress = SubResource("GradientTexture2D_cxi3r")
 texture_progress_offset = Vector2(2.36, 4.555)
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/TextureProgressBar2"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer/MPBar"]
+layout_mode = 0
 offset_left = 70.0
 offset_top = 8.0
 offset_right = 110.0
 offset_bottom = 31.0
 text = "10"
 
-[node name="TextureProgressBar3" type="TextureProgressBar" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="XPBar" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 max_value = 10.0
 value = 10.0
@@ -120,100 +120,61 @@ texture_under = SubResource("GradientTexture2D_ahcm2")
 texture_progress = SubResource("GradientTexture2D_8d35b")
 texture_progress_offset = Vector2(2.36, 4.555)
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/TextureProgressBar3"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer/XPBar"]
+layout_mode = 0
 offset_left = 70.0
 offset_top = 8.0
 offset_right = 110.0
 offset_bottom = 31.0
 text = "10"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "HP"
 
-[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label2" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "MP"
 
-[node name="Label3" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label3" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "XP"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(128, 128)
+[node name="Class" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_vokoc")
-expand_mode = 3
-flip_h = true
+text = "Knight
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer2"]
+"
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
+text = "Sir Duncan"
+horizontal_alignment = 1
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-max_value = 10.0
-value = 10.0
-texture_under = SubResource("GradientTexture2D_ahcm2")
-texture_progress = SubResource("GradientTexture2D_sv3ew")
-texture_progress_offset = Vector2(2.36, 4.555)
-
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-max_value = 10.0
-value = 10.0
-texture_under = SubResource("GradientTexture2D_ahcm2")
-texture_progress = SubResource("GradientTexture2D_cxi3r")
-texture_progress_offset = Vector2(2.36, 4.555)
-
-[node name="TextureProgressBar3" type="TextureProgressBar" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-max_value = 10.0
-value = 10.0
-texture_under = SubResource("GradientTexture2D_ahcm2")
-texture_progress = SubResource("GradientTexture2D_8d35b")
-texture_progress_offset = Vector2(2.36, 4.555)
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "HP"
-
-[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "MP"
-
-[node name="Label3" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer2"]
-layout_mode = 2
-text = "XP"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/HBoxContainer/Characters"]
 layout_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(128, 128)
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/Characters/HBoxContainer2"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_3s1yw")
+texture = SubResource("AtlasTexture_tb48n")
 expand_mode = 2
 flip_h = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer2"]
 layout_mode = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 max_value = 10.0
 value = 10.0
@@ -221,7 +182,15 @@ texture_under = SubResource("GradientTexture2D_ahcm2")
 texture_progress = SubResource("GradientTexture2D_sv3ew")
 texture_progress_offset = Vector2(2.36, 4.555)
 
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer2/VBoxContainer/TextureProgressBar"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "10"
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 max_value = 10.0
 value = 10.0
@@ -229,7 +198,15 @@ texture_under = SubResource("GradientTexture2D_ahcm2")
 texture_progress = SubResource("GradientTexture2D_cxi3r")
 texture_progress_offset = Vector2(2.36, 4.555)
 
-[node name="TextureProgressBar3" type="TextureProgressBar" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer2/VBoxContainer/TextureProgressBar2"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "10"
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 max_value = 10.0
 value = 10.0
@@ -237,26 +214,229 @@ texture_under = SubResource("GradientTexture2D_ahcm2")
 texture_progress = SubResource("GradientTexture2D_8d35b")
 texture_progress_offset = Vector2(2.36, 4.555)
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer2/VBoxContainer/TextureProgressBar3"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "10"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer2"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer2"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer2/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "HP"
 
-[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer2"]
+[node name="Label2" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer2/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "MP"
 
-[node name="Label3" type="Label" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer2"]
+[node name="Label3" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer2/VBoxContainer2"]
 layout_mode = 2
 text = "XP"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer2"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="TextureRect4" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer4"]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer2/VBoxContainer3"]
 layout_mode = 2
+text = "Knight
+Sir Duncan
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/HBoxContainer/Characters"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/Characters/HBoxContainer3"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_tb48n")
+expand_mode = 2
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer3"]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+texture_under = SubResource("GradientTexture2D_ahcm2")
+texture_progress = SubResource("GradientTexture2D_sv3ew")
+texture_progress_offset = Vector2(2.36, 4.555)
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer3/VBoxContainer/TextureProgressBar"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "10"
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+texture_under = SubResource("GradientTexture2D_ahcm2")
+texture_progress = SubResource("GradientTexture2D_cxi3r")
+texture_progress_offset = Vector2(2.36, 4.555)
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer3/VBoxContainer/TextureProgressBar2"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "10"
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+texture_under = SubResource("GradientTexture2D_ahcm2")
+texture_progress = SubResource("GradientTexture2D_8d35b")
+texture_progress_offset = Vector2(2.36, 4.555)
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer3/VBoxContainer/TextureProgressBar3"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "10"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer3/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "HP"
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer3/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "MP"
+
+[node name="Label3" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "XP"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer3/VBoxContainer3"]
+layout_mode = 2
+text = "Knight
+Sir Duncan
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/HBoxContainer/Characters"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/Characters/HBoxContainer4"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_tb48n")
+expand_mode = 2
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer4"]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer4/VBoxContainer"]
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+texture_under = SubResource("GradientTexture2D_ahcm2")
+texture_progress = SubResource("GradientTexture2D_sv3ew")
+texture_progress_offset = Vector2(2.36, 4.555)
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer4/VBoxContainer/TextureProgressBar"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "10"
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer4/VBoxContainer"]
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+texture_under = SubResource("GradientTexture2D_ahcm2")
+texture_progress = SubResource("GradientTexture2D_cxi3r")
+texture_progress_offset = Vector2(2.36, 4.555)
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer4/VBoxContainer/TextureProgressBar2"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "10"
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="Panel/HBoxContainer/Characters/HBoxContainer4/VBoxContainer"]
+layout_mode = 2
+max_value = 10.0
+value = 10.0
+texture_under = SubResource("GradientTexture2D_ahcm2")
+texture_progress = SubResource("GradientTexture2D_8d35b")
+texture_progress_offset = Vector2(2.36, 4.555)
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer4/VBoxContainer/TextureProgressBar3"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "10"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer4"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer4/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "HP"
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer4/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "MP"
+
+[node name="Label3" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer4/VBoxContainer2"]
+layout_mode = 2
+text = "XP"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/HBoxContainer/Characters/HBoxContainer4"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/Characters/HBoxContainer4/VBoxContainer3"]
+layout_mode = 2
+text = "Knight
+Sir Duncan
+"
+horizontal_alignment = 1
+
+[node name="Menu2" parent="Panel/HBoxContainer" instance=ExtResource("2_836h6")]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+
+[node name="InventoryUi" parent="." instance=ExtResource("3_tdbmy")]
+visible = false
+layout_mode = 1
+offset_left = 2.0
+offset_right = 2.0

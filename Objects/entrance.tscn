@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://2c8fl5iybjbt"]
+[gd_scene load_steps=34 format=3 uid="uid://2c8fl5iybjbt"]
 
 [ext_resource type="PackedScene" uid="uid://bxianuxxcj8ka" path="res://Objects/basic_room.tscn" id="1_yrwma"]
 [ext_resource type="Texture2D" uid="uid://dg4y326if57nr" path="res://textures/Dirt_20-128x128.png" id="2_m2t3o"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b5nye0o1xu2fq" path="res://Objects/Test2d.tscn" id="9_b8wgs"]
 [ext_resource type="Shader" path="res://Shaders/waterplane.gdshader" id="10_swc4u"]
 [ext_resource type="PackedScene" uid="uid://c26hmjw4h40w3" path="res://Objects/enemies/map/slime.tscn" id="11_l3geo"]
+[ext_resource type="PackedScene" uid="uid://be5cojomd6vec" path="res://Objects/items/Pickupable Items/h_potion.tscn" id="12_ksaeo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yp3ep"]
 albedo_texture = ExtResource("2_m2t3o")
@@ -213,3 +214,6 @@ mesh = SubResource("QuadMesh_0oh12")
 
 [node name="Slime" parent="." index="6" instance=ExtResource("11_l3geo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3857, 3.18614, 1.74831)
+
+[node name="HPotion" parent="." index="7" instance=ExtResource("12_ksaeo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.84538, 3.59022, -7.37941)
