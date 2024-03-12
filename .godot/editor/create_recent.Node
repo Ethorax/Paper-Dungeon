@@ -1,3 +1,7 @@
+RichTextLabel
+AudioStreamPlayer
+Timer
+PanelContainer
 CollisionShape3D
 Area3D
 Sprite3D
@@ -6,9 +10,5 @@ HBoxContainer
 TextureRect
 Label
 VBoxContainer
-PanelContainer
 GridContainer
 ScrollContainer
-Button
-TextureProgressBar
-ProgressBar

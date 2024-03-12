@@ -1,5 +1,5 @@
 f2b985f967f0bdb1e3adfa033ebc58fb
-::res://::1709419118
+::res://::1710030062
 BattleScene.gd::GDScript::-1::1706989101::0::1::::<>Node3D<>::
 icon.svg::CompressedTexture2D::927530047019400782::1702252835::1702598021::1::::<><>::
 README.md::TextFile::-1::1702429204::0::1::::<><>::
@@ -187,25 +187,31 @@ tangent-test.tres::ShaderMaterial::1491877661751243884::1702429210::0::1::::<><>
 ::res://addons/qodot/textures/special/::1702429211
 clip.png::CompressedTexture2D::8369999958819788034::1702429210::1702429211::1::::<><>::
 skip.png::CompressedTexture2D::3013576122456084822::1702429210::1702429211::1::::<><>::
+::res://Audio/::1709780015
+bkdialogue.mp3::AudioStreamMP3::6462329418936352923::1709769578::1709769578::1::::<><>::
+bkdialoguespeedy.mp3::AudioStreamMP3::822203855532876052::1709780015::1709780015::1::::<><>::
+::res://Demos/::1709780358
+::res://Fonts/::1709935766
+chary___.ttf::FontFile::6615920031602402585::1709935766::1709935766::1::::<><>::
 ::res://Maps/::1702835367
 2dTest.map::Resource::567366254822590472::1702575663::1702829139::1::::<><>::res://addons/qodot/src/resources/quake_map_file.gd
 battlestage.map::Resource::7852553596751152485::1702835280::1702835367::1::::<><>::res://addons/qodot/src/resources/quake_map_file.gd
 entrance.map::Resource::4515604357276785295::1702683838::1702829139::1::::<><>::res://addons/qodot/src/resources/quake_map_file.gd
-::res://Objects/::1709419019
+::res://Objects/::1709940849
 basic_room.tscn::PackedScene::4017303411766671840::1709407010::0::1::::<><>::res://Shaders/sky.gdshader<>res://addons/qodot/src/nodes/qodot_map.gd<>uid://c36hv0o6g0udo::::res://addons/qodot/game_definitions/fgd/qodot_fgd.tres
 BattleIcons.png::CompressedTexture2D::36839560951673418::1706978502::1706978502::1::::<><>::
 battle_scene.tscn::PackedScene::1884299351464185745::1706989101::0::1::::<><>::res://BattleScene.gd<>res://addons/qodot/src/nodes/qodot_map.gd<>uid://c36hv0o6g0udo::::res://addons/qodot/game_definitions/fgd/qodot_fgd.tres<>uid://bev4e8ji11dyy::::res://textures/Brick_10-128x128.png
 damage_number.tscn::PackedScene::3182053891661154407::1706989102::0::1::::<><>::res://Scripts/damage_number.gd
 door.tscn::PackedScene::5471125482542908510::1709407010::0::1::::<><>::res://Scripts/Door.gd
 enemy.tscn::PackedScene::8261682704195959562::1705873982::0::1::::<><>::res://Scripts/Enemy.gd<>uid://2mghtd40yb2k::::res://Sprites/Enemies/slime.png
-entrance.tscn::PackedScene::1901240747962400993::1709419019::0::1::::<><>::uid://bxianuxxcj8ka::::res://Objects/basic_room.tscn<>uid://dg4y326if57nr::::res://textures/Dirt_20-128x128.png<>uid://cyk572nvebxpw::::res://textures/Brick_19-128x128.png<>uid://bgw12gcx8tq4e::::res://textures/Dirt_07-128x128.png<>uid://36e74d38y18a::::res://textures/Brick_07-128x128.png<>uid://cqxhrldw107q2::::res://textures/Dirt_15-128x128.png<>uid://d3j7sfuy6qgss::::res://Objects/party members/Map/2dcharacter.tscn<>uid://cj7ivw1v3e143::::res://Objects/door.tscn<>uid://b5nye0o1xu2fq::::res://Objects/Test2d.tscn<>res://Shaders/waterplane.gdshader<>uid://c26hmjw4h40w3::::res://Objects/enemies/map/slime.tscn<>uid://be5cojomd6vec::::res://Objects/items/Pickupable Items/h_potion.tscn
+entrance.tscn::PackedScene::1901240747962400993::1709940849::0::1::::<><>::uid://bxianuxxcj8ka::::res://Objects/basic_room.tscn<>uid://dg4y326if57nr::::res://textures/Dirt_20-128x128.png<>uid://cyk572nvebxpw::::res://textures/Brick_19-128x128.png<>uid://bgw12gcx8tq4e::::res://textures/Dirt_07-128x128.png<>uid://36e74d38y18a::::res://textures/Brick_07-128x128.png<>uid://cqxhrldw107q2::::res://textures/Dirt_15-128x128.png<>uid://d3j7sfuy6qgss::::res://Objects/party members/Map/2dcharacter.tscn<>uid://cj7ivw1v3e143::::res://Objects/door.tscn<>uid://b5nye0o1xu2fq::::res://Objects/Test2d.tscn<>res://Shaders/waterplane.gdshader<>uid://c26hmjw4h40w3::::res://Objects/enemies/map/slime.tscn<>uid://be5cojomd6vec::::res://Objects/items/Pickupable Items/h_potion.tscn
 fire.tscn::PackedScene::7878060004693541631::1705341027::0::1::::<><>::
 Move_selector.gd::GDScript::-1::1706987605::0::1::::<>Node3D<>::
 Move_selector.tscn::PackedScene::6188002711814192190::1706989101::0::1::::<><>::res://Objects/Move_selector.gd<>uid://0hoge71aem47::::res://Sprites/BattleIcons.png
 player.tscn::PackedScene::8095741657536114824::1702749873::0::1::::<><>::res://Scripts/player.gd
 slime.gd::GDScript::-1::1704842726::0::1::::<>CharacterBody3D<>::
 stats.tscn::PackedScene::5892825865557314935::1706989102::0::1::::<><>::res://Scripts/Stats.gd
-Test2d.tscn::PackedScene::4520388590562754038::1709419019::0::1::::<><>::res://addons/qodot/src/nodes/qodot_map.gd<>uid://c36hv0o6g0udo::::res://addons/qodot/game_definitions/fgd/qodot_fgd.tres<>uid://ci63he43pu6ud::::res://textures/Brick_09-128x128.png<>uid://cyk572nvebxpw::::res://textures/Brick_19-128x128.png<>uid://d3j7sfuy6qgss::::res://Objects/party members/Map/2dcharacter.tscn<>uid://cm3xg558vwjh5::::res://textures/Brick_16-128x128.png<>res://Shaders/sky.gdshader<>uid://c26hmjw4h40w3::::res://Objects/enemies/map/slime.tscn<>uid://bthcnas743puf::::res://Objects/enemies/inBattle/Slime.tscn
+Test2d.tscn::PackedScene::4520388590562754038::1709940849::0::1::::<><>::res://addons/qodot/src/nodes/qodot_map.gd<>uid://c36hv0o6g0udo::::res://addons/qodot/game_definitions/fgd/qodot_fgd.tres<>uid://ci63he43pu6ud::::res://textures/Brick_09-128x128.png<>uid://cyk572nvebxpw::::res://textures/Brick_19-128x128.png<>uid://d3j7sfuy6qgss::::res://Objects/party members/Map/2dcharacter.tscn<>uid://cm3xg558vwjh5::::res://textures/Brick_16-128x128.png<>res://Shaders/sky.gdshader<>uid://c26hmjw4h40w3::::res://Objects/enemies/map/slime.tscn<>uid://bthcnas743puf::::res://Objects/enemies/inBattle/Slime.tscn
 test_level.tscn::PackedScene::9092559558095282953::1709407010::0::1::::<><>::res://addons/qodot/src/nodes/qodot_map.gd<>uid://c36hv0o6g0udo::::res://addons/qodot/game_definitions/fgd/qodot_fgd.tres<>uid://e65cfxc23lce::::res://textures/Brick_20-128x128.png<>uid://dw0qf0ddq1b66::::res://textures/Brick_01-128x128.png<>uid://ci63he43pu6ud::::res://textures/Brick_09-128x128.png<>uid://crehjqv2nqef3::::res://textures/Brick_15-128x128.png<>uid://c2ov7he5ls1l2::::res://textures/Brick_06-128x128.png<>uid://dnlvxgy88yfwy::::res://Objects/player.tscn<>uid://dqlyqg6eilire::::res://textures/Brick_14-128x128.png<>uid://hpcmdqpr5jsm::::res://textures/Brick_03-128x128.png
 ::res://Objects/enemies/::1704841799
 ::res://Objects/enemies/inBattle/::1706989101
@@ -215,29 +221,30 @@ Slime.tscn::PackedScene::3734604035700716697::1706989101::0::1::::<><>::uid://2m
 ::res://Objects/enemies/map/::1705873982
 skeleton.tscn::PackedScene::4031699721371527711::1705873982::0::1::::<><>::res://Objects/slime.gd<>uid://dkbm1wpkxf2xw::::res://Sprites/Enemies/Skeleton.png
 slime.tscn::PackedScene::6732382812489153124::1705873982::0::1::::<><>::res://Objects/slime.gd<>uid://bthcnas743puf::::res://Objects/enemies/inBattle/Slime.tscn<>uid://2mghtd40yb2k::::res://Sprites/Enemies/slime.png<>uid://nyjdjx4w1la1::::res://Objects/enemies/inBattle/Ghost.tscn
-::res://Objects/inventory/::1709419018
+::res://Objects/inventory/::1709940849
 inventory_data.gd::GDScript::-1::1708381401::0::1::::InventoryData<>Resource<>::
-Slot.tscn::PackedScene::2936005315745693979::1709419018::0::1::::<><>::res://Scripts/UI/Slot.gd
+Slot.tscn::PackedScene::2936005315745693979::1709940849::0::1::::<><>::res://Scripts/UI/Slot.gd
 slot_data.gd::GDScript::-1::1708381401::0::1::::SlotData<>Resource<>::
-test_inventory.tres::Resource/InventoryData::4237154114711606728::1709407495::0::1::::<><>::res://Objects/inventory/inventory_data.gd<>uid://dc7bxyb7k88mn::::res://Objects/items/Items/h_potion.tres<>res://Objects/inventory/slot_data.gd
+test_inventory.tres::Resource/InventoryData::4237154114711606728::1709935315::0::1::::<><>::res://Objects/inventory/inventory_data.gd<>uid://dc7bxyb7k88mn::::res://Objects/items/Items/h_potion.tres<>res://Objects/inventory/slot_data.gd
 ::res://Objects/items/::1709167980
 item_data.gd::GDScript::-1::1708432492::0::1::::ItemData<>Resource<>::
 ::res://Objects/items/Items/::1709406602
-h_potion.tres::Resource/ItemData::7365802880311700241::1709406602::0::1::::<><>::res://Objects/items/item_data.gd<>uid://7ith2g75ia0j::::res://Sprites/Items/Potion.png
-::res://Objects/items/Pickupable Items/::1709419019
-h_potion.tscn::PackedScene::2729254320855115398::1709419019::0::1::::<><>::uid://7ith2g75ia0j::::res://Sprites/Items/Potion.png<>res://Scripts/item_pickup.gd<>uid://dc7bxyb7k88mn::::res://Objects/items/Items/h_potion.tres
+h_potion.tres::Resource/Resource::7365802880311700241::1709406602::0::1::::<><>::res://Objects/items/item_data.gd<>uid://7ith2g75ia0j::::res://Sprites/Items/Potion.png
+::res://Objects/items/Pickupable Items/::1709940849
+h_potion.tscn::PackedScene::2729254320855115398::1709940849::0::1::::<><>::uid://7ith2g75ia0j::::res://Sprites/Items/Potion.png<>res://Scripts/item_pickup.gd<>uid://dc7bxyb7k88mn::::res://Objects/items/Items/h_potion.tres
 ::res://Objects/party members/::1705873533
 ::res://Objects/party members/Battle/::1706989101
 knight.tscn::PackedScene::7013250263253781598::1706989101::0::1::::<><>::uid://cp7r8mdktl1w2::::res://Objects/stats.tscn<>uid://fwikx56pfroi::::res://Sprites/Knight.png<>res://Scripts/ProgressBar3D.gd<>uid://cufrraw834gc1::::res://Objects/Move_selector.tscn
 wizard.tscn::PackedScene::7951176001870723381::1706989101::0::1::::<><>::uid://cp7r8mdktl1w2::::res://Objects/stats.tscn<>uid://c2js76g5x8ggp::::res://Sprites/wizard.png<>res://Scripts/ProgressBar3D.gd<>uid://cufrraw834gc1::::res://Objects/Move_selector.tscn
-::res://Objects/party members/Map/::1709419019
-2dcharacter.tscn::PackedScene::9145104455434914942::1709419019::0::1::::<><>::res://Scripts/2dcharacter.gd<>uid://c66jhbrjt4nyc::::res://Objects/party members/Battle/knight.tscn<>uid://fwikx56pfroi::::res://Sprites/Knight.png<>res://Scripts/torch.gd<>uid://dljuybmwmv5tp::::res://Objects/party members/Battle/wizard.tscn<>res://Shaders/postprocessing.gdshader<>uid://dkigq54a6288r::::res://Objects/fire.tscn<>uid://cd58rs175s5yn::::res://Objects/UI/menu.tscn
-::res://Objects/UI/::1709419019
-inventory_info_ui.tscn::PackedScene::3563206935548388633::1709419019::0::1::::<><>::uid://7ith2g75ia0j::::res://Sprites/Items/Potion.png
-inventory_ui.gd::GDScript::-1::1709410177::0::1::::<>PanelContainer<>::
-inventory_ui.tscn::PackedScene::692408456346171899::1709419019::0::1::::<><>::uid://bh3htw4c1mnv4::::res://Objects/inventory/Slot.tscn<>res://Objects/UI/inventory_ui.gd<>uid://bq1bq6je212k0::::res://Objects/UI/inventory_info_ui.tscn
-menu2.tscn::PackedScene::7624279923567250070::1709419019::0::1::::<><>::
-menu.tscn::PackedScene::5047374237259753125::1709419018::0::1::::<><>::uid://g6c1kamvlmxw::::res://Sprites/Profiles.png<>res://Scripts/UI/menu.gd<>uid://dgvi1nsn5bo0e::::res://Objects/UI/menu2.tscn<>uid://j4n4ph0fmqmt::::res://Objects/UI/inventory_ui.tscn
+::res://Objects/party members/Map/::1709940849
+2dcharacter.tscn::PackedScene::9145104455434914942::1709940849::0::1::::<><>::res://Scripts/2dcharacter.gd<>uid://c66jhbrjt4nyc::::res://Objects/party members/Battle/knight.tscn<>uid://fwikx56pfroi::::res://Sprites/Knight.png<>res://Scripts/torch.gd<>uid://dljuybmwmv5tp::::res://Objects/party members/Battle/wizard.tscn<>res://Shaders/postprocessing.gdshader<>uid://dkigq54a6288r::::res://Objects/fire.tscn<>uid://cd58rs175s5yn::::res://Objects/UI/menu.tscn
+::res://Objects/UI/::1709954265
+inventory_info_ui.tscn::PackedScene::3563206935548388633::1709940849::0::1::::<><>::uid://7ith2g75ia0j::::res://Sprites/Items/Potion.png
+inventory_ui.gd::GDScript::-1::1709420916::0::1::::<>PanelContainer<>::
+inventory_ui.tscn::PackedScene::692408456346171899::1709940849::0::1::::<><>::uid://bh3htw4c1mnv4::::res://Objects/inventory/Slot.tscn<>res://Objects/UI/inventory_ui.gd<>uid://bq1bq6je212k0::::res://Objects/UI/inventory_info_ui.tscn
+menu2.tscn::PackedScene::7624279923567250070::1709940849::0::1::::<><>::
+menu.tscn::PackedScene::5047374237259753125::1709940849::0::1::::<><>::uid://g6c1kamvlmxw::::res://Sprites/Profiles.png<>res://Scripts/UI/menu.gd<>uid://dgvi1nsn5bo0e::::res://Objects/UI/menu2.tscn<>uid://j4n4ph0fmqmt::::res://Objects/UI/inventory_ui.tscn
+textbox.tscn::PackedScene::3654397393646413068::1709954265::0::1::::<><>::res://Scripts/UI/textbox.gd<>uid://lyjtvpfgjwm3::::res://Audio/bkdialoguespeedy.mp3<>uid://c1i2ibgoh8ttp::::res://Fonts/chary___.ttf
 ::res://Scripts/::1709405510
 2dcharacter.gd::GDScript::-1::1709405509::0::1::::<>CharacterBody3D<>::
 Battle_Manager.gd::GDScript::-1::1702944161::0::1::::<>Node<>::
@@ -250,15 +257,16 @@ player.gd::GDScript::-1::1702507740::0::1::::<>CharacterBody3D<>::
 ProgressBar3D.gd::GDScript::-1::1706845787::0::1::::ProgressBar3D<>Node3D<>::
 Stats.gd::GDScript::-1::1706910310::0::1::::<>Node<>::
 torch.gd::GDScript::-1::1702570231::0::1::::<>OmniLight3D<>::
-::res://Scripts/UI/::1709406126
+::res://Scripts/UI/::1709954265
 menu.gd::GDScript::-1::1708901380::0::1::::<>Control<>::
-Slot.gd::GDScript::-1::1709406126::0::1::::<>PanelContainer<>::
-::res://Shaders/::1709419108
-fire.gdshader::Shader::-1::1709419108::0::1::::<><>::
-postprocessing.gdshader::Shader::-1::1709419108::0::1::::<><>::
-sky.gdshader::Shader::-1::1709419108::0::1::::<><>::
-Slot_selection.gdshader::Shader::-1::1709419108::0::1::::<><>::
-waterplane.gdshader::Shader::-1::1709419108::0::1::::<><>::
+Slot.gd::GDScript::-1::1709420155::0::1::::<>PanelContainer<>::
+textbox.gd::GDScript::-1::1709954265::0::1::::<>Control<>::
+::res://Shaders/::1709954265
+fire.gdshader::Shader::-1::1709954265::0::1::::<><>::
+postprocessing.gdshader::Shader::-1::1709954265::0::1::::<><>::
+sky.gdshader::Shader::-1::1709954265::0::1::::<><>::
+Slot_selection.gdshader::Shader::-1::1709954265::0::1::::<><>::
+waterplane.gdshader::Shader::-1::1709954265::0::1::::<><>::
 ::res://Sprites/::1708305224
 BattleIcons.png::CompressedTexture2D::1770032748600022922::1706978519::1706978520::1::::<><>::
 Knight.png::CompressedTexture2D::396865378470603296::1702749707::1702829188::1::::<><>::

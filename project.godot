@@ -32,6 +32,7 @@ enabled=PackedStringArray("res://addons/qodot/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://Audio/": "pink",
 "res://Maps/": "orange",
 "res://Objects/": "yellow",
 "res://Scripts/": "green",

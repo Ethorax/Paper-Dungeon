@@ -13,5 +13,4 @@ res://Objects/UI/inventory_info_ui.tscn
 res://Objects/items/Pickupable Items/h_potion.tscn
 res://Objects/Test2d.tscn
 res://Objects/entrance.tscn
-res://Objects/UI/inventory_ui.gd
-res://Scripts/UI/Slot.gd
+res://Objects/UI/textbox.tscn
