@@ -1,3 +1,5 @@
-InventoryData
 ItemData
+SlotData
+Environment
+InventoryData
 Resource

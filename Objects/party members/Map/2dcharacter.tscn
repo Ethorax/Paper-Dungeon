@@ -1,13 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://d3j7sfuy6qgss"]
+[gd_scene load_steps=21 format=3 uid="uid://d3j7sfuy6qgss"]
 
 [ext_resource type="Script" path="res://Scripts/2dcharacter.gd" id="1_y3r2s"]
 [ext_resource type="PackedScene" uid="uid://c66jhbrjt4nyc" path="res://Objects/party members/Battle/knight.tscn" id="2_ar1t6"]
-[ext_resource type="Texture2D" uid="uid://fwikx56pfroi" path="res://Sprites/Knight.png" id="2_t3k63"]
 [ext_resource type="Script" path="res://Scripts/torch.gd" id="2_un1g8"]
 [ext_resource type="PackedScene" uid="uid://dljuybmwmv5tp" path="res://Objects/party members/Battle/wizard.tscn" id="3_vhkls"]
+[ext_resource type="Texture2D" uid="uid://fwikx56pfroi" path="res://Sprites/Characters/Knight.png" id="4_1acax"]
 [ext_resource type="Shader" path="res://Shaders/postprocessing.gdshader" id="4_fju17"]
 [ext_resource type="PackedScene" uid="uid://dkigq54a6288r" path="res://Objects/fire.tscn" id="4_jsjw5"]
 [ext_resource type="PackedScene" uid="uid://cd58rs175s5yn" path="res://Objects/UI/menu.tscn" id="8_2x7u0"]
+[ext_resource type="PackedScene" uid="uid://bschnkgee2d4o" path="res://Objects/UI/textbox.tscn" id="9_c2evj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rpi81"]
 
@@ -140,7 +141,7 @@ shader_parameter/tex = SubResource("PlaceholderTexture2D_1f7wr")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hm16g"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" groups=["Player"]]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 transform = Transform3D(0.955378, 0.295388, -9.90944e-05, -0.295388, 0.955378, -0.000125885, 5.74885e-05, 0.000149539, 1, 0, 2.07016, 0)
 script = ExtResource("1_y3r2s")
 party = [ExtResource("2_ar1t6"), ExtResource("3_vhkls"), null, null]
@@ -162,7 +163,7 @@ offset = Vector2(16, 0)
 pixel_size = 0.03
 shaded = true
 texture_filter = 0
-texture = ExtResource("2_t3k63")
+texture = ExtResource("4_1acax")
 hframes = 3
 vframes = 2
 
@@ -209,6 +210,14 @@ offset_top = 74.0
 offset_right = 119.0
 offset_bottom = 74.0
 scale = Vector2(0.8, 0.8)
+
+[node name="Textbox" parent="CanvasLayer" instance=ExtResource("9_c2evj")]
+process_mode = 2
+offset_left = 69.0
+offset_top = 439.0
+offset_right = 69.0
+offset_bottom = -6.0
+scale = Vector2(0.9, 0.9)
 
 [node name="TorchRight" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.881468, 0.264344, 0.813253)

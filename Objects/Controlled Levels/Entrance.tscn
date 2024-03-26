@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d24cv2xmgrp44"]
+
+[ext_resource type="PackedScene" uid="uid://c3pvj43yk2n5p" path="res://Objects/overworld_controller.tscn" id="1_8r0c7"]
+[ext_resource type="PackedScene" uid="uid://2c8fl5iybjbt" path="res://Objects/entrance.tscn" id="2_5i148"]
+
+[node name="OverworldController" instance=ExtResource("1_8r0c7")]
+
+[node name="Entrance" parent="." index="0" instance=ExtResource("2_5i148")]

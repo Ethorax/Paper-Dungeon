@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0hoge71aem47"
-path="res://.godot/imported/BattleIcons.png-ca66a1817e950de7bbac0d87629a91e9.ctex"
+uid="uid://c2js76g5x8ggp"
+path="res://.godot/imported/wizard.png-5a6c5cf59756b1b0ec91fc70f09fd446.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/BattleIcons.png"
-dest_files=["res://.godot/imported/BattleIcons.png-ca66a1817e950de7bbac0d87629a91e9.ctex"]
+source_file="res://Sprites/Characters/wizard.png"
+dest_files=["res://.godot/imported/wizard.png-5a6c5cf59756b1b0ec91fc70f09fd446.ctex"]
 
 [params]
 
@@ -20,8 +20,8 @@ compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
+compress/channel_pack=1
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

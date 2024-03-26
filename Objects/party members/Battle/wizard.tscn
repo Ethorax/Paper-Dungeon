@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dljuybmwmv5tp"]
 
 [ext_resource type="PackedScene" uid="uid://cp7r8mdktl1w2" path="res://Objects/stats.tscn" id="1_5jegd"]
-[ext_resource type="Texture2D" uid="uid://c2js76g5x8ggp" path="res://Sprites/wizard.png" id="1_mduyh"]
+[ext_resource type="Texture2D" uid="uid://c2js76g5x8ggp" path="res://Sprites/Characters/wizard.png" id="1_mduyh"]
 [ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="2_r4387"]
 [ext_resource type="PackedScene" uid="uid://cufrraw834gc1" path="res://Objects/Move_selector.tscn" id="4_wonm5"]
 

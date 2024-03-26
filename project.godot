@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="New Porject"
-run/main_scene="res://Objects/entrance.tscn"
+run/main_scene="res://Objects/Controlled Levels/Entrance.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,7 +23,7 @@ BattleManager="*res://Scripts/Battle_Manager.gd"
 [display]
 
 window/stretch/mode="viewport"
-mouse_cursor/custom_image="res://Sprites/MedievalCursor.png"
+mouse_cursor/custom_image="res://Sprites/UI/MedievalCursor.png"
 
 [editor_plugins]
 
@@ -73,3 +73,4 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_environment="res://Objects/Skys/SkyboxTest.tres"

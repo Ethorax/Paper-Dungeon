@@ -23,7 +23,7 @@ func populate_item_grid(slot_datas: Array[SlotData]) -> void:
 		if slot_data:
 			slot.set_slot_data(slot_data)
 			
-		slot.slot_clicked.connect(_on_slot_slot_clicked)
+		slot.slot_clicked.connect(_on_slot_slot_clicked.bind())
 			
 
 func add_item(item : ItemData):
@@ -33,7 +33,12 @@ func add_item(item : ItemData):
 	new_item.item_data = item
 	
 	for i in inv_data.slot_datas.size()-1:
-		if inv_data.slot_datas[i] == null:
+		print(inv_data.slot_datas[i])
+		if(inv_data.slot_datas[i].item_data.name == item.name):
+			inv_data.slot_datas[i].quantity +=1
+			populate_item_grid(inv_data.slot_datas)
+			break
+		elif inv_data.slot_datas[i] == null:
 			inv_data.slot_datas[i] = new_item
 			populate_item_grid(inv_data.slot_datas)
 			break
@@ -44,5 +49,9 @@ func update_info(slot_data):
 	
 
 
-func _on_slot_slot_clicked():
-	print("Hello!")
+func _on_slot_slot_clicked(item : ItemData):
+	print(item.description)
+	info_window.get_child(0).get_child(0).get_child(4).text = item.description
+	info_window.get_child(0).get_child(0).get_child(0).text = item.name
+	info_window.get_child(0).get_child(0).get_child(2).texture = item.texture
+	print("Hello")

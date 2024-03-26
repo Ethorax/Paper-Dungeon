@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://2mghtd40yb2k" path="res://Sprites/Enemies/slime.png" id="1_u0hoj"]
 [ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="2_cvfc5"]
 [ext_resource type="PackedScene" uid="uid://cp7r8mdktl1w2" path="res://Objects/stats.tscn" id="3_3lr2r"]
-[ext_resource type="Texture2D" uid="uid://dilmye0cokrcj" path="res://Sprites/MedievalCursor.png" id="4_tjoiy"]
+[ext_resource type="Texture2D" uid="uid://dilmye0cokrcj" path="res://Sprites/UI/MedievalCursor.png" id="4_tjoiy"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_h24mb"]
 

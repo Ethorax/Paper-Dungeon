@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://cd58rs175s5yn"]
 
-[ext_resource type="Texture2D" uid="uid://g6c1kamvlmxw" path="res://Sprites/Profiles.png" id="1_0mfu2"]
 [ext_resource type="Script" path="res://Scripts/UI/menu.gd" id="1_m1vyy"]
 [ext_resource type="PackedScene" uid="uid://dgvi1nsn5bo0e" path="res://Objects/UI/menu2.tscn" id="2_836h6"]
+[ext_resource type="Texture2D" uid="uid://g6c1kamvlmxw" path="res://Sprites/Characters/Profiles.png" id="2_dk7y4"]
 [ext_resource type="PackedScene" uid="uid://j4n4ph0fmqmt" path="res://Objects/UI/inventory_ui.tscn" id="3_tdbmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tb48n"]
-atlas = ExtResource("1_0mfu2")
+atlas = ExtResource("2_dk7y4")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="Gradient" id="Gradient_2clqy"]
@@ -46,6 +46,8 @@ width = 155
 height = 30
 
 [node name="Menu" type="Control"]
+process_mode = 3
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -440,3 +442,5 @@ visible = false
 layout_mode = 1
 offset_left = 2.0
 offset_right = 2.0
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

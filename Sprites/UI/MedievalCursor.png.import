@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fwikx56pfroi"
-path.s3tc="res://.godot/imported/Knight.png-b65ab9a2ebf73946f6942d2d46cabe88.s3tc.ctex"
+uid="uid://dilmye0cokrcj"
+path.s3tc="res://.godot/imported/MedievalCursor.png-f3ee0c3c76f4b9c9ca0d1db844d0268e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Knight.png"
-dest_files=["res://.godot/imported/Knight.png-b65ab9a2ebf73946f6942d2d46cabe88.s3tc.ctex"]
+source_file="res://Sprites/UI/MedievalCursor.png"
+dest_files=["res://.godot/imported/MedievalCursor.png-f3ee0c3c76f4b9c9ca0d1db844d0268e.s3tc.ctex"]
 
 [params]
 

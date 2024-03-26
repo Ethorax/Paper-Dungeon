@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmgkq7eorqsdf"]
+
+[ext_resource type="Environment" uid="uid://bo1kwtsk6q8ak" path="res://Objects/Skys/SkyboxTest.tres" id="1_rx07o"]
+
+[node name="Node3D" type="WorldEnvironment"]
+environment = ExtResource("1_rx07o")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true

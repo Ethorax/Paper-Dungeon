@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ba6erdlaltwj"]
+
+[ext_resource type="Script" path="res://Objects/items/item_data.gd" id="1_hs3qh"]
+[ext_resource type="Texture2D" uid="uid://bki0u262wt75d" path="res://Sprites/Items/herb.png" id="2_oce31"]
+
+[resource]
+script = ExtResource("1_hs3qh")
+name = "Herb"
+description = "Herb with healing qualities."
+stackable = true
+texture = ExtResource("2_oce31")

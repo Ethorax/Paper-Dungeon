@@ -1,26 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxianuxxcj8ka"]
+[gd_scene load_steps=5 format=3 uid="uid://bxianuxxcj8ka"]
 
-[ext_resource type="Shader" path="res://Shaders/sky.gdshader" id="1_k5yyp"]
+[ext_resource type="Environment" uid="uid://bo1kwtsk6q8ak" path="res://Objects/Skys/SkyboxTest.tres" id="1_ti3a6"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_4hq58"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="3_1ujtf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ewhgr"]
-shader = ExtResource("1_k5yyp")
-shader_parameter/skyColor = Color(0.34902, 0.34902, 0.34902, 1)
-
-[sub_resource type="Sky" id="Sky_8usly"]
-sky_material = SubResource("ShaderMaterial_ewhgr")
-
-[sub_resource type="Environment" id="Environment_voola"]
-background_mode = 2
-sky = SubResource("Sky_8usly")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrx3n"]
 
 [node name="BasicRoom" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_voola")
+environment = ExtResource("1_ti3a6")
 
 [node name="QodotMap" type="Node3D" parent="."]
 script = ExtResource("2_4hq58")

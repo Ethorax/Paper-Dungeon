@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dilmye0cokrcj"
-path.s3tc="res://.godot/imported/MedievalCursor.png-798a39c869a499374fe9884c68cb7e49.s3tc.ctex"
+uid="uid://cdg6113pxnvc8"
+path.s3tc="res://.godot/imported/cubemap.png-5a2cdc2d677395c2fedd4414e6d6bbff.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/MedievalCursor.png"
-dest_files=["res://.godot/imported/MedievalCursor.png-798a39c869a499374fe9884c68cb7e49.s3tc.ctex"]
+source_file="res://Objects/Skys/cubemap.png"
+dest_files=["res://.godot/imported/cubemap.png-5a2cdc2d677395c2fedd4414e6d6bbff.s3tc.ctex"]
 
 [params]
 

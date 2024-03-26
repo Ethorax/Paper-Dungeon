@@ -1,16 +1,18 @@
-res://Objects/UI/menu.tscn
-res://Objects/inventory/test_inventory.tres
+res://Objects/Skys/SkyboxTest.tres
+res://Objects/UI/textbox.tscn
 res://Shaders/postprocessing.gdshader
+res://Objects/inventory/test_inventory.tres
 res://Shaders/sky.gdshader
 res://Shaders/waterplane.gdshader
 res://Shaders/fire.gdshader
 res://Shaders/Slot_selection.gdshader
-res://Objects/inventory/Slot.tscn
-res://Objects/UI/inventory_ui.tscn
-res://Objects/UI/menu2.tscn
+res://Objects/UI/menu.tscn
 res://Objects/party members/Map/2dcharacter.tscn
-res://Objects/UI/inventory_info_ui.tscn
-res://Objects/items/Pickupable Items/h_potion.tscn
 res://Objects/Test2d.tscn
 res://Objects/entrance.tscn
-res://Objects/UI/textbox.tscn
+res://Objects/overworld_controller.tscn
+res://Objects/Controlled Levels/Entrance.tscn
+res://Objects/basic_room.tscn
+res://Objects/inventory/Slot.tscn
+res://Objects/UI/inventory_info_ui.tscn
+res://Scripts/2dcharacter.gd

@@ -27,6 +27,7 @@ func _process(delta):
 	if(!visible and !text_queue.is_empty()):
 		visible = true
 		
+		
 	
 	
 	if(visible):
@@ -67,6 +68,14 @@ func submit():
 	elif(text.visible_characters >= len(text.text)):
 		if(text_queue.is_empty()):
 			visible = false
+			
 		else:
 			text.text = text_queue.pop_front()
 			text.visible_characters = 0
+
+
+func _on_visibility_changed():
+	if(visible ==true):
+		get_parent().get_parent().emit_signal("pause")
+	else:
+		get_parent().get_parent().emit_signal("unpause")

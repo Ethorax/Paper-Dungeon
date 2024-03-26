@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cufrraw834gc1"]
 
 [ext_resource type="Script" path="res://Objects/Move_selector.gd" id="1_d3lt8"]
-[ext_resource type="Texture2D" uid="uid://0hoge71aem47" path="res://Sprites/BattleIcons.png" id="1_pnefa"]
+[ext_resource type="Texture2D" uid="uid://0hoge71aem47" path="res://Sprites/UI/BattleIcons.png" id="1_pnefa"]
 
 [sub_resource type="Curve3D" id="Curve3D_rf2ef"]
 _data = {

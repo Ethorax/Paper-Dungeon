@@ -195,7 +195,7 @@ shape = SubResource("ConvexPolygonShape3D_ne6g6")
 [node name="entity_0_brush_7_collision_shape" type="CollisionShape3D" parent="QodotMap/entity_0_worldspawn" index="9"]
 shape = SubResource("ConvexPolygonShape3D_ro1l4")
 
-[node name="CharacterBody3D" parent="." index="2" instance=ExtResource("7_mt0i5")]
+[node name="Player" parent="." index="2" instance=ExtResource("7_mt0i5")]
 transform = Transform3D(0.912743, 0.278775, 0.298641, -0.292105, 0.956387, 0, -0.285617, -0.0872346, 0.954365, -7.61027, 2.9497, 0.299081)
 
 [node name="Door" parent="." index="3" instance=ExtResource("8_aaxsa")]

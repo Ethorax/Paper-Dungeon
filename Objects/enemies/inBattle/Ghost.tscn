@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cgrq7mdeh12di" path="res://Sprites/Enemies/Ghost.png" id="1_1fej4"]
 [ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="2_px3mh"]
 [ext_resource type="PackedScene" uid="uid://cp7r8mdktl1w2" path="res://Objects/stats.tscn" id="3_ij4tp"]
-[ext_resource type="Texture2D" uid="uid://dilmye0cokrcj" path="res://Sprites/MedievalCursor.png" id="4_u1edu"]
+[ext_resource type="Texture2D" uid="uid://dilmye0cokrcj" path="res://Sprites/UI/MedievalCursor.png" id="4_u1edu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vk6bo"]
 transparency = 1

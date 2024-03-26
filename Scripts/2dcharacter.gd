@@ -1,6 +1,10 @@
 extends CharacterBody3D
 
 
+signal pause()
+signal unpause()
+
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
@@ -16,7 +20,8 @@ var just_entered : bool = true
 @onready var anim = $AnimationPlayer
 
 @onready var inventory = $CanvasLayer/Menu/InventoryUi
-
+@onready var menu = $CanvasLayer/Menu
+@onready var textb = $CanvasLayer/Textbox
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -28,6 +33,13 @@ func _ready():
 	position = Global.door_destination
 
 func _physics_process(delta):
+	
+	
+	if(textb.visible or menu.visible):
+		emit_signal("pause")
+	else:
+		emit_signal("unpause")
+	
 	
 	if just_entered:
 		Global.transition -= 0.1

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://duxoncgmr8jsm"]
+
+[ext_resource type="Script" path="res://Objects/items/item_data.gd" id="1_v8bxr"]
+[ext_resource type="Texture2D" uid="uid://0traaymtv755" path="res://Sprites/Items/m_potion.png" id="2_qlto2"]
+
+[resource]
+script = ExtResource("1_v8bxr")
+name = "Mana Potion"
+description = "Potion radiating arcane energy.
+
+Restores 5 mana"
+stackable = true
+texture = ExtResource("2_qlto2")

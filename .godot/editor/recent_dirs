@@ -1,8 +1,11 @@
+res://Objects/items/Items
+res://Objects/Skys
+res://Objects/Controlled Levels
+res://Objects
+res://Scripts
 res://Scripts/UI
 res://Objects/UI
 res://Shaders
-res://Scripts
-res://Objects
 res://Sprites
 res://Objects/party members/Battle
 res://

@@ -38,3 +38,11 @@ func _process(delta):
 
 func inventory():
 	inventory_window.visible = true
+
+
+func _on_visibility_changed():
+	
+	if(visible ==true):
+		get_parent().get_parent().emit_signal("pause")
+	else:
+		get_parent().get_parent().emit_signal("unpause")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c05ntbm75bw70"]
+
+[ext_resource type="Script" path="res://Objects/items/item_data.gd" id="1_b85m6"]
+[ext_resource type="Texture2D" uid="uid://bqcmhvu7gjy7y" path="res://Sprites/Items/oil.png" id="2_qviyx"]
+
+[resource]
+script = ExtResource("1_b85m6")
+name = "Oil Flask"
+description = "An flask of oil.
+
+Perhaps it does more than makes things slippery?"
+stackable = true
+texture = ExtResource("2_qviyx")

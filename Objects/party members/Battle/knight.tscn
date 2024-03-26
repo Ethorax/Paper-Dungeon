@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c66jhbrjt4nyc"]
 
 [ext_resource type="PackedScene" uid="uid://cp7r8mdktl1w2" path="res://Objects/stats.tscn" id="1_hdk1j"]
-[ext_resource type="Texture2D" uid="uid://fwikx56pfroi" path="res://Sprites/Knight.png" id="1_mv5tp"]
+[ext_resource type="Texture2D" uid="uid://fwikx56pfroi" path="res://Sprites/Characters/Knight.png" id="1_mv5tp"]
 [ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="2_njtd5"]
 [ext_resource type="PackedScene" uid="uid://cufrraw834gc1" path="res://Objects/Move_selector.tscn" id="4_lsqob"]
 
