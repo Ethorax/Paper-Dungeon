@@ -32,8 +32,8 @@ cast_shadow = 3
 mesh = SubResource("CylinderMesh_h24mb")
 
 [node name="Stats" parent="." instance=ExtResource("3_3lr2r")]
-max_health = 5
-health = 5
+max_health = 2
+health = 2
 mana = 10
 strength = 5
 speed = 2

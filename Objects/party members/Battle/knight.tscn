@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c66jhbrjt4nyc"]
+[gd_scene load_steps=8 format=3 uid="uid://c66jhbrjt4nyc"]
 
 [ext_resource type="PackedScene" uid="uid://cp7r8mdktl1w2" path="res://Objects/stats.tscn" id="1_hdk1j"]
 [ext_resource type="Texture2D" uid="uid://fwikx56pfroi" path="res://Sprites/Characters/Knight.png" id="1_mv5tp"]
 [ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="2_njtd5"]
+[ext_resource type="Resource" uid="uid://dndmvh7wq2o5o" path="res://Objects/Party/Individuals/Knight.tres" id="2_no025"]
 [ext_resource type="PackedScene" uid="uid://cufrraw834gc1" path="res://Objects/Move_selector.tscn" id="4_lsqob"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ge4g"]
@@ -16,6 +17,7 @@ material = SubResource("StandardMaterial3D_8ge4g")
 [node name="Knight" type="Node3D" groups=["Hero"]]
 
 [node name="Stats" parent="." instance=ExtResource("1_hdk1j")]
+stats = ExtResource("2_no025")
 max_health = 10
 health = 10
 mana = 10

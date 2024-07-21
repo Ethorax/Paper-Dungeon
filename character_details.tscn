@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://bes672xfnh8ku"]
+
+[ext_resource type="Script" path="res://character_details.gd" id="1_2fxyj"]
+[ext_resource type="Texture2D" uid="uid://g6c1kamvlmxw" path="res://Sprites/Characters/Profiles.png" id="1_vfqe4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1stnm"]
+atlas = ExtResource("1_vfqe4")
+region = Rect2(0, 0, 60, 64)
+
+[node name="CharacterDetails" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -774.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_2fxyj")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 321.0
+offset_top = 11.0
+offset_right = 369.0
+offset_bottom = 59.0
+text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 108.0
+offset_right = 258.0
+offset_bottom = 393.0
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Duncan"
+fit_content = true
+
+[node name="Class" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Knight"
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = SubResource("AtlasTexture_1stnm")
+
+[node name="Health" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Health: 10 / 10"
+fit_content = true
+
+[node name="Mana" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Mana: 10 / 10"
+fit_content = true
+
+[node name="XP" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]XP: 0/ 10"
+fit_content = true
+
+[node name="Buffer" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = " "
+fit_content = true
+
+[node name="Speed" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Speed: 3"
+fit_content = true
+
+[node name="Attack" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Attack: 2-3"
+fit_content = true
+
+[node name="Defense" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Defense: 0
+"
+fit_content = true
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

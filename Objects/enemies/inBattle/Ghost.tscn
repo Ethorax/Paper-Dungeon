@@ -23,8 +23,8 @@ texture_filter = 0
 texture = ExtResource("1_1fej4")
 
 [node name="Stats" parent="." instance=ExtResource("3_ij4tp")]
-max_health = 10
-health = 10
+max_health = 3
+health = 3
 mana = 10
 strength = 5
 speed = 6

@@ -18,7 +18,7 @@ var random = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	random.randomize()
-	add_text("Hello this is a queued up text")
+	#add_text("Hello this is a queued up text")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

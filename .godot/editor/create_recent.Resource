@@ -1,3 +1,5 @@
+CharacterData
+PartyData
 ItemData
 SlotData
 Environment

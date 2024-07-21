@@ -1,5 +1,6 @@
 extends Node
 
+@export var stats : CharacterData
 
 @onready var bar = get_parent().get_node("Bar")
 
@@ -23,7 +24,7 @@ extends Node
 
 
 func _ready():
-	bar.max_value = max_health
+	update_bar()
 
 
 func take_damage(damage : int):
@@ -31,3 +32,10 @@ func take_damage(damage : int):
 	bar.value = health
 	if(health <= 0):
 		get_parent().queue_free()
+
+func update_bar():
+	if(stats != null):
+		max_health = stats.max_health
+		health = stats.health
+		bar.max_value = max_health
+		bar.value = health

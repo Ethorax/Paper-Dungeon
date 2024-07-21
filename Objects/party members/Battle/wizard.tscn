@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dljuybmwmv5tp"]
+[gd_scene load_steps=8 format=3 uid="uid://dljuybmwmv5tp"]
 
 [ext_resource type="PackedScene" uid="uid://cp7r8mdktl1w2" path="res://Objects/stats.tscn" id="1_5jegd"]
 [ext_resource type="Texture2D" uid="uid://c2js76g5x8ggp" path="res://Sprites/Characters/wizard.png" id="1_mduyh"]
@@ -16,6 +16,7 @@ material = SubResource("StandardMaterial3D_33omg")
 [node name="Wizard" type="Node3D" groups=["Hero"]]
 
 [node name="Stats" parent="." instance=ExtResource("1_5jegd")]
+stats = ExtResource("2_fbhao")
 max_health = 10
 health = 10
 mana = 10

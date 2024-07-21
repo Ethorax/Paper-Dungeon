@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://dndmvh7wq2o5o"]
+
+[ext_resource type="Texture2D" uid="uid://g6c1kamvlmxw" path="res://Sprites/Characters/Profiles.png" id="1_2yqyc"]
+[ext_resource type="PackedScene" uid="uid://c66jhbrjt4nyc" path="res://Objects/party members/Battle/knight.tscn" id="1_ecu4x"]
+[ext_resource type="Script" path="res://Scripts/character_data.gd" id="1_sc8ao"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0vim"]
+atlas = ExtResource("1_2yqyc")
+region = Rect2(0, 0, 63.2345, 64)
+
+[resource]
+script = ExtResource("1_sc8ao")
+battle_version = ExtResource("1_ecu4x")
+portrait = SubResource("AtlasTexture_f0vim")
+name = "Duncan"
+class_title = "Knight"
+xp = 1
+xp_to_level = 10
+max_health = 5
+health = 10
+max_mana = 5
+mana = 5
+strength = 2
+speed = 3
+constitution = 0
+luck = 0
+attack = 0
+defence = 0

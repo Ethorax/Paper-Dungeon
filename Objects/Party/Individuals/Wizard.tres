@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://bplxtgusq54hm"]
+
+[ext_resource type="Script" path="res://Scripts/character_data.gd" id="1_j8coq"]
+[ext_resource type="Texture2D" uid="uid://g6c1kamvlmxw" path="res://Sprites/Characters/Profiles.png" id="1_ov1jt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a3mg"]
+atlas = ExtResource("1_ov1jt")
+region = Rect2(62.294, 0, 65.3061, 64)
+
+[resource]
+script = ExtResource("1_j8coq")
+battle_version = ExtResource("1_guqom")
+portrait = SubResource("AtlasTexture_7a3mg")
+name = "Pinkerton"
+class_title = "Wizard"
+xp = 5
+xp_to_level = 10
+max_health = 8
+health = 6
+max_mana = 10
+mana = 15
+strength = 1
+speed = 3
+constitution = 0
+luck = 0
+attack = 0
+defence = 0

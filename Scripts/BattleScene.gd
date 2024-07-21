@@ -4,9 +4,12 @@ var just_entered : bool = true
 
 var cam_move : bool = true
 var contingents = []
+var party = preload("res://Objects/Party/Test_Party.tres")
+ 
 @onready var active_character = 0
 @onready var spot_light = $SpotLight3D
 @onready var cam = $Path3D/PathFollow3D/Camera3D
+
 var enemy_list = Global.enemy_group
 var enemy_line = []
 var hero_line = []
@@ -19,10 +22,16 @@ var damage_number = preload("res://Objects/damage_number.tscn")
 var picking : bool = false
 var active_char = 0
 var turn_state
+
 enum hero_turn {
 	move_select,
 	target_select
 }
+enum enemy_turn {
+	move_select,
+	target_select
+}
+var enemy_state = enemy_turn.move_select
 var hero_state = hero_turn.move_select
 var target = 0
 
@@ -39,11 +48,13 @@ func _ready():
 		contingents.append(character)
 	print(contingents)
 	var hero_index = 0
-	for i in Global.party:
+	for i in party.character_datas:
 		if(i != null):
-			var hero_inst = i.instantiate()
+			var hero_inst = i.battle_version.instantiate()
 			#hero_inst.scale = hero_inst.scale * 6
 			contingents[hero_index].add_child(hero_inst)
+			hero_line.append(contingents[hero_index].get_child(0))
+			hero_line[hero_index].get_node("Stats").stats = party.character_datas[hero_index]
 			hero_index += 1
 		
 		
@@ -106,13 +117,48 @@ func _process(delta):
 	update_contingents()
 	print(enemy_line)
 	if(battle_ended):
+		
+		for i in hero_line.size():
+			party.character_datas[i] = $Heroes.get_child(i).get_child(0).get_node("Stats").stats
+			
+		
+		ResourceSaver.save(party,"res://Objects/Party/Test_Party.tres")
 		get_tree().change_scene_to_file("res://Objects/entrance.tscn")
+		
 	if(active_char>=contingents.size()-1):
 		active_char = 0
+		
 	if(contingents[active_char].get_child(0).is_in_group("Enemy") and !battle_ended):	
 		#print("Enemy Turn")
 		
-		active_char += 1
+		#active_char += 1
+		
+		
+		highlight(contingents[active_char])
+		
+		match enemy_state:
+			enemy_turn.move_select:
+				var tween = create_tween()
+				tween.tween_property(cam, "position", Vector3(contingents[active_char].position.z,cam.position.y,cam.position.z), 0.5)
+				enemy_state = enemy_turn.target_select
+			
+			
+			
+			
+			enemy_turn.target_select:
+				
+				hero_line.shuffle()
+				hero_line[0].get_node("Stats").stats.take_damage(1)
+				spawn_damage(1,hero_line[0].global_position)
+				hero_line[0].get_node("Stats").update_bar()
+				enemy_state = enemy_turn.move_select
+				
+				active_char+=1
+		
+		
+		
+		
+		
 		
 	elif(contingents[active_char].get_child(0).is_in_group("Hero") and !battle_ended):
 		#print("Hero Turn")

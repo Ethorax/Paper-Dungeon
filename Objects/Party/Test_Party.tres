@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PartyData" load_steps=4 format=3]
+
+[ext_resource type="Resource" path="res://Objects/Party/Individuals/Knight.tres" id="1_ndvlc"]
+[ext_resource type="Script" path="res://Scripts/party_data.gd" id="1_xafxc"]
+[ext_resource type="Resource" path="res://Objects/Party/Individuals/Wizard.tres" id="2_t534n"]
+
+[resource]
+script = ExtResource("1_xafxc")
+character_datas = Array[Resource("res://Scripts/character_data.gd")]([ExtResource("1_ndvlc"), ExtResource("2_t534n")])

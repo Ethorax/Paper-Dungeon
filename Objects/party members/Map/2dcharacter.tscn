@@ -203,6 +203,7 @@ offset_right = -2.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Menu" parent="CanvasLayer" instance=ExtResource("8_2x7u0")]
 offset_left = 119.0
