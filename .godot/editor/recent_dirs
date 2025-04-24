@@ -1,13 +1,15 @@
+res://Objects/enemies/map
+res://Objects
+res://Objects/enemies/Enemy Datas
 res://Objects/party members/Battle
-res://Scripts
-res://Sprites/Characters
-res://
 res://Objects/Party/Individuals
 res://Objects/Party
+res://
+res://Scripts
+res://Sprites/Characters
 res://Objects/items/Items
 res://Objects/Skys
 res://Objects/Controlled Levels
-res://Objects
 res://Scripts/UI
 res://Objects/UI
 res://Shaders

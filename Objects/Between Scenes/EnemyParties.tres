@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyGroupData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://enemy_data.gd" id="1_twcis"]
+[ext_resource type="Resource" path="res://Objects/enemies/Enemy Datas/slime.tres" id="2_cxdjo"]
+[ext_resource type="Resource" path="res://Objects/enemies/Enemy Datas/skeleton.tres" id="3_0s0r5"]
+[ext_resource type="Script" path="res://enemy_group_data.gd" id="4_ps1cv"]
+
+[resource]
+script = ExtResource("4_ps1cv")
+enemy_datas = Array[ExtResource("1_twcis")]([ExtResource("2_cxdjo"), ExtResource("2_cxdjo"), ExtResource("3_0s0r5")])

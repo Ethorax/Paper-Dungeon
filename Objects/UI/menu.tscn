@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dgvi1nsn5bo0e" path="res://Objects/UI/menu2.tscn" id="2_836h6"]
 [ext_resource type="Texture2D" uid="uid://g6c1kamvlmxw" path="res://Sprites/Characters/Profiles.png" id="2_dk7y4"]
 [ext_resource type="PackedScene" uid="uid://j4n4ph0fmqmt" path="res://Objects/UI/inventory_ui.tscn" id="3_tdbmy"]
-[ext_resource type="PackedScene" uid="uid://bes672xfnh8ku" path="res://character_details.tscn" id="5_adjny"]
+[ext_resource type="PackedScene" uid="uid://bes672xfnh8ku" path="res://Objects/UI/character_details.tscn" id="5_adjny"]
 
 [sub_resource type="Gradient" id="Gradient_2clqy"]
 

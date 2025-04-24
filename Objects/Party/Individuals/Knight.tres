@@ -1,27 +1,27 @@
 [gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://dndmvh7wq2o5o"]
 
 [ext_resource type="Texture2D" uid="uid://g6c1kamvlmxw" path="res://Sprites/Characters/Profiles.png" id="1_2yqyc"]
-[ext_resource type="PackedScene" uid="uid://c66jhbrjt4nyc" path="res://Objects/party members/Battle/knight.tscn" id="1_ecu4x"]
 [ext_resource type="Script" path="res://Scripts/character_data.gd" id="1_sc8ao"]
+[ext_resource type="PackedScene" uid="uid://c66jhbrjt4nyc" path="res://Objects/party members/Battle/knight.tscn" id="1_t3x6o"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f0vim"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kkvq"]
 atlas = ExtResource("1_2yqyc")
-region = Rect2(0, 0, 63.2345, 64)
+region = Rect2(0, 0, 64, 64)
 
 [resource]
 script = ExtResource("1_sc8ao")
-battle_version = ExtResource("1_ecu4x")
-portrait = SubResource("AtlasTexture_f0vim")
+battle_version = ExtResource("1_t3x6o")
+portrait = SubResource("AtlasTexture_0kkvq")
 name = "Duncan"
 class_title = "Knight"
-xp = 1
-xp_to_level = 10
-max_health = 5
-health = 10
-max_mana = 5
-mana = 5
-strength = 2
-speed = 3
+xp = 0
+xp_to_level = 0
+max_health = 0
+health = 0
+max_mana = 0
+mana = 0
+strength = 0
+speed = 0
 constitution = 0
 luck = 0
 attack = 0

@@ -10,14 +10,14 @@ var party = preload("res://Objects/Party/Test_Party.tres")
 @onready var spot_light = $SpotLight3D
 @onready var cam = $Path3D/PathFollow3D/Camera3D
 
-var enemy_list = Global.enemy_group
+var all_fighters = []
 var enemy_line = []
 var hero_line = []
 var battle_ended = false
 
 
 var damage_number = preload("res://Objects/damage_number.tscn")
-
+@onready var enemy_list := load("res://Objects/Between Scenes/EnemyParties.tres") as EnemyGroupData
 
 var picking : bool = false
 var active_char = 0
@@ -38,43 +38,54 @@ var target = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	print("battle started")
-	enemy_list.shuffle()
-	var chosen_enemy_group = enemy_list[0]
-	print(chosen_enemy_group)
-	for character in get_child(1).get_children():
+	#enemy_list.shuffle()
+	#var chosen_enemy_group = enemy_list
+	#print(chosen_enemy_group)
+	for character in party.character_datas:
 		contingents.append(character)
-	for character in get_child(2).get_children():
+	for character in enemy_list.enemy_datas:
 		contingents.append(character)
 	print(contingents)
 	var hero_index = 0
 	for i in party.character_datas:
 		if(i != null):
 			var hero_inst = i.battle_version.instantiate()
-			#hero_inst.scale = hero_inst.scale * 6
-			contingents[hero_index].add_child(hero_inst)
-			hero_line.append(contingents[hero_index].get_child(0))
-			hero_line[hero_index].get_node("Stats").stats = party.character_datas[hero_index]
+			hero_inst.scale = hero_inst.scale * 5
+			$Heroes.get_children()[hero_index].add_child(hero_inst)
+			hero_line.append($Heroes.get_children()[hero_index])
 			hero_index += 1
 		
 		
 	var slot_index = 4
 	var monster_index = 0
-	for i in chosen_enemy_group:
-		var enemy_inst = chosen_enemy_group[monster_index].instantiate()
-		#enemy_inst.scale = enemy_inst.scale * 6
-		contingents[slot_index].add_child(enemy_inst)
-		enemy_line.append(contingents[slot_index])
+	for i in enemy_list.enemy_datas:
+		var enemy_inst = preload("res://Objects/enemy_in_battle.tscn").instantiate()
+		enemy_inst.scale = enemy_inst.scale * 6
+		#contingents[slot_index].add_child(enemy_inst)
+		$Enemies.get_children()[monster_index].add_child(enemy_inst)
+		enemy_line.append($Enemies.get_children()[monster_index])
 		slot_index += 1
-		monster_index += 1 
+		monster_index +=1
+		#monster_index += 1 
+	monster_index=0
+	for i in $Enemies.get_children():
+		if(i.get_child_count()>0):
+			enemy_line.append(contingents[monster_index])
+			monster_index+=1
 		
 
 	var groups = []
-	for i in contingents:
+	for i in $Heroes.get_children():
 		if i.get_children().size() > 0:
 			groups.append(i)
 	contingents = groups
-			
+	groups = []
+	for i in $Enemies.get_children():
+		if i.get_children().size() > 0:
+			groups.append(i)
+	contingents.append_array(groups)		
 							
 	#Sort all the contingents by speed
 	var battle_order
@@ -89,17 +100,19 @@ func _ready():
 		#var swap2 = contingents[min]
 		#contingents[i] = swap2
 		#contingents[min] = swap1
+	all_fighters.append_array(party.character_datas)
+	all_fighters.append_array(enemy_list.enemy_datas)
 	
 	
-	for i in contingents.size()-2:
-		for j in contingents.size()-2:
-			if (contingents[j].get_child(0).get_node("Stats").speed > contingents[j+1].get_child(0).get_node("Stats").speed):
-				var temp = contingents[j]
-				contingents[j] = contingents[j+1]
-				contingents[j+1] = temp
+	for i in all_fighters.size()-2:
+		for j in all_fighters.size()-2:
+			if (all_fighters[j].speed > all_fighters[j+1].speed):
+				var temp = all_fighters[j]
+				all_fighters[j] = all_fighters[j+1]
+				all_fighters[j+1] = temp
 	
-	contingents.insert(0,contingents.pop_at(-1))
-	contingents.reverse()
+	all_fighters.insert(0,all_fighters.pop_at(-1))
+	all_fighters.reverse()
 	
 	
 	
@@ -115,7 +128,7 @@ func _process(delta):
 	
 			
 	update_contingents()
-	print(enemy_line)
+	#print(enemy_line)
 	if(battle_ended):
 		
 		for i in hero_line.size():
@@ -195,7 +208,7 @@ func _process(delta):
 				if(Input.is_action_just_pressed("ui_accept")):
 					match contingents[active_char].get_child(0).get_node("Selector").selected:
 						0:
-							var attack = contingents[active_char].get_child(0).get_node("Stats").attack
+							var attack = contingents[active_char].attack
 							var attack_target = enemy_line[target]
 							print(contingents[active_char].get_child(0).name,"attack",attack_target.get_child(0).name)
 							unhighlight(enemy_line[target])

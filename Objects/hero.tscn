@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://y0dkdcsodg28"]
+
+[ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="1_8p02x"]
+[ext_resource type="Texture2D" uid="uid://c2js76g5x8ggp" path="res://Sprites/Characters/wizard.png" id="2_cdq2e"]
+[ext_resource type="PackedScene" uid="uid://cufrraw834gc1" path="res://Objects/Move_selector.tscn" id="3_kvgm2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0bby"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.207843)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6w0yb"]
+material = SubResource("StandardMaterial3D_k0bby")
+top_radius = 0.05
+bottom_radius = 0.75
+height = 25.0
+
+[node name="Hero" type="Node3D" groups=["Hero"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19858, 0)
+
+[node name="Bar" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.227061, 0)
+script = ExtResource("1_8p02x")
+size = Vector3(1.16, 0.175, 0.05)
+cast_shadows = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.870106, 0)
+billboard = 1
+shaded = true
+texture = ExtResource("2_cdq2e")
+hframes = 2
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Selector" parent="." instance=ExtResource("3_kvgm2")]
+visible = false
+
+[node name="Light" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.6862, 0)
+mesh = SubResource("CylinderMesh_6w0yb")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.85903, 0)
+light_size = 1.0
+spot_range = 22.3867
+spot_angle = 7.44942

@@ -109,7 +109,9 @@ func _on_hitbox_body_entered(body):
 	print(body.name)
 	if(body.is_in_group("Enemy")):
 		b_started = true
-		Global.enemy_group = body.enemy_arangements
+		body.enemy_groups.shuffle()
+		ResourceSaver.save(body.enemy_groups[0],"res://Objects/Between Scenes/EnemyParties.tres")
+		Global.enemy_group = body.enemy_groups
 		Global.party = party
 		
 	

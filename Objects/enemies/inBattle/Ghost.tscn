@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://nyjdjx4w1la1"]
+[gd_scene load_steps=6 format=3 uid="uid://nyjdjx4w1la1"]
 
 [ext_resource type="Texture2D" uid="uid://cgrq7mdeh12di" path="res://Sprites/Enemies/Ghost.png" id="1_1fej4"]
 [ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="2_px3mh"]
-[ext_resource type="PackedScene" uid="uid://cp7r8mdktl1w2" path="res://Objects/stats.tscn" id="3_ij4tp"]
 [ext_resource type="Texture2D" uid="uid://dilmye0cokrcj" path="res://Sprites/UI/MedievalCursor.png" id="4_u1edu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vk6bo"]
@@ -21,16 +20,6 @@ billboard = 2
 shaded = true
 texture_filter = 0
 texture = ExtResource("1_1fej4")
-
-[node name="Stats" parent="." instance=ExtResource("3_ij4tp")]
-max_health = 3
-health = 3
-mana = 10
-strength = 5
-speed = 6
-constitution = 5
-luck = 5
-attack = 1
 
 [node name="Light" type="SpotLight3D" parent="."]
 transform = Transform3D(0.0122168, 0.999908, -0.00584062, 7.13873e-05, 0.00584018, 0.999983, 0.999925, -0.012217, -3.24249e-08, -0.585081, 18.9646, -0.0285871)

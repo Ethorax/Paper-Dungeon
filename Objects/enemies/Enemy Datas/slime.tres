@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3 uid="uid://dufklet3cvpem"]
+
+[ext_resource type="Texture2D" uid="uid://2mghtd40yb2k" path="res://Sprites/Enemies/slime.png" id="1_nt6ls"]
+[ext_resource type="Script" path="res://enemy_data.gd" id="2_d7e8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pddjt"]
+atlas = ExtResource("1_nt6ls")
+region = Rect2(0, 0, 61, 64)
+
+[resource]
+script = ExtResource("2_d7e8v")
+battle_sprite = SubResource("AtlasTexture_pddjt")
+name = "Slime"
+xp = 0
+max_health = 3
+health = 3
+max_mana = 0
+mana = 0
+strength = 0
+speed = 0
+constitution = 0
+luck = 0
+attack = 1
+defence = 0

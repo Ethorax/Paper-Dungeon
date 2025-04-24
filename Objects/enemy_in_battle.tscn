@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgmemrdyhxki5"]
+
+[ext_resource type="Script" path="res://Scripts/ProgressBar3D.gd" id="1_2wyp8"]
+[ext_resource type="Texture2D" uid="uid://2mghtd40yb2k" path="res://Sprites/Enemies/slime.png" id="2_p8x2w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wby5"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.0117647)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_akt2h"]
+material = SubResource("StandardMaterial3D_8wby5")
+
+[node name="Enemy" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19858, 0)
+
+[node name="Bar" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.227061, 0)
+script = ExtResource("1_2wyp8")
+size = Vector3(1.16, 0.175, 0.05)
+
+[node name="Sprite3D" type="Sprite3D" parent="." groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.870106, 0)
+billboard = 2
+shaded = true
+texture = ExtResource("2_p8x2w")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Light" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Light"]
+transform = Transform3D(0.082993, -0.0966588, -6.33948, 0.000484958, 16.549, -0.0370274, 6.79283, -5.26484e-07, 0.0774567, 0.196587, 1.32616, -0.0285871)
+mesh = SubResource("CylinderMesh_akt2h")
+skeleton = NodePath("../SpotLight3D")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light"]
+transform = Transform3D(0.0122168, 0.999908, -0.00584062, 7.13873e-05, 0.00584018, 0.999983, 0.999925, -0.012217, -3.24249e-08, -0.585081, 18.9646, -0.0285871)
+light_energy = 250.0
+light_indirect_energy = 1.333
+light_volumetric_fog_energy = 0.0
+spot_range = 18.9601
+spot_angle = 15.861

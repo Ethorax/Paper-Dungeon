@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Enemy
 
-@export var enemy_groups : Array = [Enemy]
+@export var enemy_groups : Array[EnemyGroupData]
 @export var texture : Texture
 
 # Called when the node enters the scene tree for the first time.

@@ -1,3 +1,9 @@
+MeshInstance3D
+Node3D
+SpotLight3D
+AnimationPlayer
+Sprite3D
+ProgressBar3D
 CollisionShape2D
 Area2D
 Button
@@ -6,10 +12,3 @@ RichTextLabel
 TextureRect
 Label
 VBoxContainer
-PanelContainer
-MultiMeshInstance3D
-MeshInstance3D
-Camera3D
-WorldEnvironment
-TextEdit
-HBoxContainer
